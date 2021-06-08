@@ -5,6 +5,12 @@ main {
     justify-content: center;
     align-items: center;
 }
-.article{
+
+article {
     display: flex;
+    flex-direction: column;
+    text-align: center;
+    border: solid 1px gray;
+    border-radius: 5%;
+    padding: 10px;
 }
