@@ -1,0 +1,13 @@
+.banner-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: gray;
+}
+
+.navbar{
+margin-right: 5rem;
+}
+button{
+    margin: 1rem;
+}
