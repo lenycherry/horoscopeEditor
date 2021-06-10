@@ -1,0 +1,15 @@
+button{
+    border: none;
+    cursor: pointer;
+}
+textarea{
+    padding: 5px;
+    resize: none;
+    font-size: 1.3em;
+}
+.btn-edit{
+    padding: 1em;
+}
+.btn-random{
+  height: 1.5em;  
+}
