@@ -5,16 +5,4 @@
     width: 100vw;
     height: 85vh;
 }
-.form-content{
-    display: flex;
-    flex-direction: column;
-}
-.btn-form-bloc{
-    display: flex;
-    justify-content: space-between;
-    margin: 1em 0;
-}
-label{
-    font-weight: bold;
-    margin:0.5em 0em;
-}
+
