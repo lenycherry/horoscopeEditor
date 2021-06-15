@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import data from "../../horoscopeTexts.json";
+import horoscopeTexts from "../../horoscopeTexts.json";
 
 
 
@@ -9,19 +9,21 @@ const HoroscopeText = () => {
     const [text, setText] = useState("")
 
 
-    loadCurrentText(() => {
+    useEffect(
+        () => {
+            const currentText = horoscopeTexts.horoscopeTexts[0]
+            setText(currentText)
+            console.log(currentText)
+            console.log(horoscopeTexts.horoscopeTexts[0])
+        },
+        [],
+    );
 
-        setText(data.horoscopeText[0])
-    })
+    handleclick = () => {
+        const randomText = horoscopeTexts.horoscopeTexts[Math.floor(Math.random() * horoscopeTexts.length)];
+        setText(randomText);
+    };
 
-    useEffect(() => {
-        this.loadCurrentText(this.state.text)
-        console.log(this)
-    })
-
-    console.log(data);
-
-    console.log(data.horoscopeText[0])
 
     return (
         <>
@@ -31,10 +33,12 @@ const HoroscopeText = () => {
             </div>
             <div className="btn-form-bloc">
                 <button className="btn btn-edit">Valider</button>
-                <button className="btn btn-random">Aléatoire</button>
+                <button className="btn btn-random" onClick={this.handleclick()}>Aléatoire</button>
             </div>
         </>
     )
 }
 
 export default HoroscopeText
+
+
