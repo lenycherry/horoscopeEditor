@@ -4,25 +4,27 @@ import horoscopeTexts from "../../horoscopeTexts.json";
 
 
 
-const HoroscopeText = () => {
+function HoroscopeText() {
 
-    const [text, setText] = useState("")
+    const [text, setText] = useState("");
 
 
-    useEffect(
-        () => {
-            const currentText = horoscopeTexts.horoscopeTexts[0]
-            setText(currentText)
-            console.log(currentText)
-            console.log(horoscopeTexts.horoscopeTexts[0])
-        },
-        [],
-    );
+    useEffect(() => {
+        const currentText = horoscopeTexts.horoscopeTexts[0];
+        setText(currentText);
 
-    handleclick = () => {
-        const randomText = horoscopeTexts.horoscopeTexts[Math.floor(Math.random() * horoscopeTexts.length)];
+    }, []);
+
+
+    function handleClick() {
+        const textsArray = horoscopeTexts.horoscopeTexts;
+        const randomText = textsArray[Math.floor(Math.random() * textsArray.length)];
         setText(randomText);
+        console.log(this.currentText)
+        console.log(this.random)
     };
+
+
 
 
     return (
@@ -33,7 +35,7 @@ const HoroscopeText = () => {
             </div>
             <div className="btn-form-bloc">
                 <button className="btn btn-edit">Valider</button>
-                <button className="btn btn-random" onClick={this.handleclick()}>Aléatoire</button>
+                <button className="btn btn-random" onClick={() => handleClick()}>Aléatoire</button>
             </div>
         </>
     )
